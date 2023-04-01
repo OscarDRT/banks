@@ -13,11 +13,13 @@ export const BanksListScreen = () => {
     <Container margins>
       <Header title="Bancos" />
       {loading ? (
-        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+        <View
+          testID={'ActivityIndicator'}
+          style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
           <ActivityIndicator size={'large'} />
         </View>
       ) : (
-        <View style={{flex: 1, marginVertical: 16}}>
+        <View testID={'BanksList'} style={{flex: 1, marginVertical: 16}}>
           <BanksList banks={banks} />
         </View>
       )}

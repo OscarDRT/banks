@@ -29,11 +29,19 @@ export const BankCard = ({bank}: BankCardProps) => {
   }, [url]);
 
   return (
-    <View style={styles.card}>
-      <Text style={[styles.title, styles.textAlign]}>{bankName}</Text>
-      <Text style={[styles.description, styles.textAlign]}>{description}</Text>
-      <Text style={[styles.textAlign]}>{`Años operando: ${age}`}</Text>
-      <TouchableOpacity onPress={handlePress}>
+    <View testID={'BankCard'} style={styles.card}>
+      <Text testID={'BankCardName'} style={[styles.title, styles.textAlign]}>
+        {bankName}
+      </Text>
+      <Text
+        testID={'BankCardDescription'}
+        style={[styles.description, styles.textAlign]}>
+        {description}
+      </Text>
+      <Text
+        testID={'BankCardAge'}
+        style={[styles.textAlign]}>{`Años operando: ${age}`}</Text>
+      <TouchableOpacity testID={'BankCardButtonUrl'} onPress={handlePress}>
         <Text style={[styles.textAlign, styles.url]}>Ir a la página</Text>
       </TouchableOpacity>
     </View>
